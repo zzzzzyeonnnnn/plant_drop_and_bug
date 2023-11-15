@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.25">
+    <title>병해충 예측 프로그램</title>
+</head>
+<body>
+
+<h2>병해충 예측 프로그램</h2>
+<h4>사진을 업로드 후 제출 버튼을 클릭해주세요</h4>
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+	<p>
+		<input type="file" name="file" autocomplete="off" required>
+	</p>
+    </dl>
+    <p>
+	<input type="submit" name="submit" value="Submit">
+    </p>
+</form>
+
+<p style="color:MediumSeaGreen;">
+    {% with messages = get_flashed_messages() %}
+	  {% if messages %}
+        사진의 병해충은 <h3 style="color:MediumSeaGreen;"><u>{{messages[0] }}</u></h3><br>
+        <img src="{{messages[1] }}" width="300", height="255">
+
+      {% endif %}
+    {% endwith %}
+</p>
+
+</body>
+</html>

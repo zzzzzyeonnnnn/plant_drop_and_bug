@@ -14,9 +14,7 @@ def getPrediction(filename):
         label[idx] = 1
 
     #load model
-    #my_model=load_model("model/model_2.h5")
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    my_model = os.path.join(script_dir, 'model/model_2.h5')
+    my_model=load_model("model/model_2.h5")
 
     SIZE = 224 #크기 정의
     #img_path = 'static/images/' + filename #이미지 경우, 사용자가 업로드 하는 경로
